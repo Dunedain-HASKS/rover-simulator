@@ -1,7 +1,7 @@
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
-import Dashboard from "./Dashboard";
-import GoogleMap from './components/GoogleMap';
+import Dashboard from "./components/Dashboard";
+import GoogleMap from "./components/GoogleMap";
 
 function App() {
   // Create a custom Material-UI theme
@@ -22,11 +22,12 @@ function App() {
   });
 
   return (
-    <div style={{height:'100%', display:'flex', border:'1px solid yellow'}}>
+    <div
+      style={{ height: "100%", display: "flex", border: "1px solid yellow" }}
+    >
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <h1>Rover DashBoard</h1>
-      <Dashboard />
+        <Dashboard />
         <GoogleMap />
         {/* Your other components go here */}
       </ThemeProvider>
