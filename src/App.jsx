@@ -1,20 +1,21 @@
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { CssBaseline } from '@mui/material';
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { CssBaseline } from "@mui/material";
+import Dashboard from "./Dashboard";
 
 function App() {
   // Create a custom Material-UI theme
   const theme = createTheme({
     palette: {
       primary: {
-        main: '#2196f3', // Change primary color
+        main: "#2196f3", // Change primary color
       },
       secondary: {
-        main: '#f50057', // Change secondary color
+        main: "#f50057", // Change secondary color
       },
       // You can customize other palette properties like error, warning, info, etc.
     },
     typography: {
-      fontFamily: 'Arial, sans-serif', // Change default font family
+      fontFamily: "Arial, sans-serif", // Change default font family
     },
     // Other customizations like spacing, breakpoints, overrides, etc. can be added here
   });
@@ -22,7 +23,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <h1>React App zzyoooocicne fenfej</h1>
+      <Dashboard />
       {/* Your other components go here */}
     </ThemeProvider>
   );
