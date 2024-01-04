@@ -5,7 +5,11 @@ import App from "./App.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <div
-      style={{ height: "100%", display: "flex", border: "1px solid yellow" }}
+      style={{
+        height: "100vh",
+        width: "100vw",
+        display: "flex",
+      }}
     >
       <App />
     </div>

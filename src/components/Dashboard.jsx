@@ -1,5 +1,5 @@
 import { Grid, useMediaQuery, useTheme } from "@mui/material";
-import DashboardComponent from "./DashboardComponents"; // Import your Dashboard components
+import SimpleMap from "./GoogleMap"; // Import your GoogleMap component
 
 function Dashboard() {
   const theme = useTheme();
@@ -9,10 +9,11 @@ function Dashboard() {
     <Grid
       container
       sx={{
+        width: "100vw",
+        height: "100vh",
         display: "flex",
-        width: "100%",
-        height: "100%",
-        border: "1px solid red",
+        justifyContent: "center",
+        alignItems: "center",
       }}
       spacing={2}
     >
@@ -20,32 +21,38 @@ function Dashboard() {
         // For smaller screens (4x1 layout)
         <>
           <Grid item xs={12}>
-            <DashboardComponent title="Component 1" />
+            <SimpleMap />
           </Grid>
           <Grid item xs={12}>
-            <DashboardComponent title="Component 2" />
+            <SimpleMap />
+            {/* <DashboardComponent title="Component 2" /> */}
           </Grid>
           <Grid item xs={12}>
-            <DashboardComponent title="Component 3" />
+            <SimpleMap />
+            {/* <DashboardComponent title="Component 3" /> */}
           </Grid>
           <Grid item xs={12}>
-            <DashboardComponent title="Component 4" />
+            <SimpleMap />
+            {/* <DashboardComponent title="Component 4" /> */}
           </Grid>
         </>
       ) : (
         // For larger screens (2x2 layout)
         <>
           <Grid item xs={6}>
-            <DashboardComponent title="Component 1" />
+            <SimpleMap />
           </Grid>
           <Grid item xs={6}>
-            <DashboardComponent title="Component 2" />
+            <SimpleMap />
+            {/* <DashboardComponent title="Component 2" /> */}
           </Grid>
           <Grid item xs={6}>
-            <DashboardComponent title="Component 3" />
+            <SimpleMap />
+            {/* <DashboardComponent title="Component 3" /> */}
           </Grid>
           <Grid item xs={6}>
-            <DashboardComponent title="Component 4" />
+            <SimpleMap />
+            {/* <DashboardComponent title="Component 4" /> */}
           </Grid>
         </>
       )}
