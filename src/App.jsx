@@ -24,6 +24,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <h1>Rover DashBoard</h1>
       <Dashboard />
       <GoogleMap />
       {/* Your other components go here */}
