@@ -1,93 +1,135 @@
-import React, { Component } from "react";
-import { Map, Marker, InfoWindow, GoogleApiWrapper } from "google-maps-react";
+// import React, { Component } from "react";
+// import { Map, Marker, InfoWindow, GoogleApiWrapper } from "google-maps-react";
 
-class GoogleMap extends Component {
-  state = {
-    activeMarker: {},
-    selectedPlace: {},
-    showingInfoWindow: false,
+// class GoogleMap extends Component {
+//   state = {
+//     activeMarker: {},
+//     selectedPlace: {},
+//     showingInfoWindow: false,
+//   };
+
+//   onMarkerClick = (props, marker) => {
+//     this.setState({
+//       activeMarker: marker,
+//       selectedPlace: props,
+//       showingInfoWindow: true,
+//     });
+//   };
+
+//   onClose = () => {
+//     if (this.state.showingInfoWindow) {
+//       this.setState({
+//         activeMarker: null,
+//         showingInfoWindow: false,
+//       });
+//     }
+//   };
+
+//   render() {
+//     const { google } = this.props;
+//     const mapStyles = {
+//       width: "100%",
+//       height: "400px",
+//     };
+
+//     const initialCenter = {
+//       lat: 23.2156,
+//       lng: -72.6369,
+//     };
+
+//     const markers = [
+//       {
+//         position: { lat: 23.2156, lng: -72.6369 },
+//         icon: {
+//           url:
+//             "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+//         },
+//         content: "<h1>Marker 1</h1>",
+//       },
+//       {
+//         position: { lat: 24.2156, lng: -71.6369 },
+//         icon: {
+//           url:
+//             "https://developers.google.com/maps/documentation/javascript/examples/full/images/google_logo_g.svg",
+//         },
+//         content: "<h1>Marker 2</h1>",
+//       },
+//       {
+//         position: { lat: 25.2156, lng: -70.6369 },
+//         content: "<h1>Marker 3</h1>",
+//       },
+//     ];
+
+//     return (
+//       <Map
+//         google={google}
+//         style={mapStyles}
+//         initialCenter={initialCenter}
+//         zoom={8}
+//       >
+//         {markers.map((marker, index) => (
+//           <Marker
+//             key={index}
+//             position={marker.position}
+//             icon={marker.icon}
+//             onClick={this.onMarkerClick}
+//           />
+//         ))}
+
+//         <InfoWindow
+//           marker={this.state.activeMarker}
+//           visible={this.state.showingInfoWindow}
+//           onClose={this.onClose}
+//         >
+//           <div>{this.state.selectedPlace.content}</div>
+//         </InfoWindow>
+//       </Map>
+//     );
+//   }
+// }
+
+// export default GoogleApiWrapper({
+//   apiKey: "YAIzaSyDwYTjxOOKIiUOdYFc0Z51EsgdeAwO2pKU",
+// })(GoogleMap);
+
+
+import React from "react";
+import GoogleMapReact from 'google-map-react';
+
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
+
+export default function SimpleMap(){
+  const defaultProps = {
+    center: {
+      lat: 10.99835602,
+      lng: 77.01502627
+    },
+    zoom: 11
   };
 
-  onMarkerClick = (props, marker) => {
-    this.setState({
-      activeMarker: marker,
-      selectedPlace: props,
-      showingInfoWindow: true,
-    });
-  };
+  const locations = [
+    { lat: 10.99835602, lng: 77.01502627, text: "Marker 1" },
+    { lat: 11.0, lng: 77.02, text: "Marker 2" },
+    { lat: 10.98, lng: 77.03, text: "Marker 3" },
+  ];
 
-  onClose = () => {
-    if (this.state.showingInfoWindow) {
-      this.setState({
-        activeMarker: null,
-        showingInfoWindow: false,
-      });
-    }
-  };
-
-  render() {
-    const { google } = this.props;
-    const mapStyles = {
-      width: "100%",
-      height: "400px",
-    };
-
-    const initialCenter = {
-      lat: 23.2156,
-      lng: -72.6369,
-    };
-
-    const markers = [
-      {
-        position: { lat: 23.2156, lng: -72.6369 },
-        icon: {
-          url:
-            "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
-        },
-        content: "<h1>Marker 1</h1>",
-      },
-      {
-        position: { lat: 24.2156, lng: -71.6369 },
-        icon: {
-          url:
-            "https://developers.google.com/maps/documentation/javascript/examples/full/images/google_logo_g.svg",
-        },
-        content: "<h1>Marker 2</h1>",
-      },
-      {
-        position: { lat: 25.2156, lng: -70.6369 },
-        content: "<h1>Marker 3</h1>",
-      },
-    ];
-
-    return (
-      <Map
-        google={google}
-        style={mapStyles}
-        initialCenter={initialCenter}
-        zoom={8}
+  return (
+    // Important! Always set the container height explicitly
+    <div style={{ height: '400px', width: '100%' }}>
+      <GoogleMapReact
+        bootstrapURLKeys={{ key: "YAIzaSyDwYTjxOOKIiUOdYFc0Z51EsgdeAwO2pKU" }}
+        defaultCenter={defaultProps.center}
+        defaultZoom={defaultProps.zoom}
       >
-        {markers.map((marker, index) => (
-          <Marker
+        {locations.map((location, index) => (
+          <AnyReactComponent
             key={index}
-            position={marker.position}
-            icon={marker.icon}
-            onClick={this.onMarkerClick}
+            lat={location.lat}
+            lng={location.lng}
+            text={location.text}
           />
         ))}
-
-        <InfoWindow
-          marker={this.state.activeMarker}
-          visible={this.state.showingInfoWindow}
-          onClose={this.onClose}
-        >
-          <div>{this.state.selectedPlace.content}</div>
-        </InfoWindow>
-      </Map>
-    );
-  }
+      </GoogleMapReact>
+    </div>
+  );
 }
-
-export default GoogleApiWrapper({
-  apiKey: "YAIzaSyDwYTjxOOKIiUOdYFc0Z51EsgdeAwO2pKU",
-})(GoogleMap);
