@@ -1,6 +1,7 @@
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import Dashboard from "./Dashboard";
+import GoogleMap from './components/GoogleMap';
 
 function App() {
   // Create a custom Material-UI theme
@@ -24,6 +25,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Dashboard />
+      <GoogleMap />
       {/* Your other components go here */}
     </ThemeProvider>
   );
