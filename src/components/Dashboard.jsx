@@ -1,6 +1,7 @@
 import { Grid, useMediaQuery, useTheme } from "@mui/material";
 import SimpleMap from "./GoogleMap"; // Import your GoogleMap component
 import VideoPlayer from "./videoPlayer";
+import Data from "./Data";
 
 function Dashboard() {
   const theme = useTheme();
@@ -25,16 +26,17 @@ function Dashboard() {
             <SimpleMap />
           </Grid>
           <Grid item xs={12}>
-            {/* <SimpleMap /> */}
-            <VideoPlayer />
+            {/* {/* <SimpleMap /> */}
+            <VideoPlayer /> */}
             {/* <DashboardComponent title="Component 2" /> */}
           </Grid>
           <Grid item xs={12}>
-            <SimpleMap />
+            {/* <SimpleMap /> */}
+            <Data />
             {/* <DashboardComponent title="Component 3" /> */}
           </Grid>
           <Grid item xs={12}>
-            <SimpleMap />
+            {/* <SimpleMap /> */}
             {/* <DashboardComponent title="Component 4" /> */}
           </Grid>
         </>
@@ -45,16 +47,17 @@ function Dashboard() {
             <SimpleMap />
           </Grid>
           <Grid item xs={6}>
-            {/* <SimpleMap /> */}
-            <VideoPlayer />
+            {/* {/* <SimpleMap /> */}
+            <VideoPlayer /> */}
             {/* <DashboardComponent title="Component 2" /> */}
           </Grid>
           <Grid item xs={6}>
-            <SimpleMap />
+            {/* <SimpleMap /> */}
+            <Data />
             {/* <DashboardComponent title="Component 3" /> */}
           </Grid>
           <Grid item xs={6}>
-            <SimpleMap />
+            {/* <SimpleMap /> */}
             {/* <DashboardComponent title="Component 4" /> */}
           </Grid>
         </>
