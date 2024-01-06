@@ -64,16 +64,16 @@ AnyReactComponent.propTypes = {
 export default function SimpleMap() {
   const defaultProps = {
     center: {
-      lat: 23.2156,
-      lng: 72.6369,
+      lat: 23.188124,
+      lng: 72.628322,
     },
-    zoom: 11,
+    zoom: 17,
   };
 
   const locations = [
-    { lat: 24.2156, lng: 73.6369, text: "Marker 1", icon: "https://cdn4.iconfinder.com/data/icons/small-n-flat/24/map-marker-512.png" },
-    { lat: 25.2156, lng: 74.6369, text: "Marker 2", icon: "URL_TO_ICON_2" },
-    { lat: 26.2156, lng: 75.6369, text: "Marker 3", icon: "URL_TO_ICON_3" },
+    { lat: 23.188155, lng: 72.628798, text: "Marker 1", icon: "https://cdn4.iconfinder.com/data/icons/small-n-flat/24/map-marker-512.png" },
+    { lat: 23.18837, lng: 72.628829, text: "Marker 2", icon: "https://cdn4.iconfinder.com/data/icons/small-n-flat/24/map-marker-512.png" },
+    { lat: 23.188642, lng: 72.628731, text: "Marker 3", icon: "https://cdn4.iconfinder.com/data/icons/small-n-flat/24/map-marker-512.png" },
   ];
 
   return (
@@ -89,8 +89,8 @@ export default function SimpleMap() {
             key={index}
             lat={location.lat}
             lng={location.lng}
-            text={location.text}
-            icon={location.icon}
+            // text={location.text}
+            icon={location.icon && location.icon}
           />
         ))}
       </GoogleMapReact>

@@ -124,5 +124,4 @@ function Dashboard() {
 }
 
 const DashboardWithBackground = withVantaBackground(Dashboard); // Wrapped Dashboard component with HOC
-
 export default DashboardWithBackground; // Export wrapped component
