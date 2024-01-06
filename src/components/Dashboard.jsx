@@ -1,41 +1,25 @@
-import {
-  Grid,
-  useMediaQuery,
-  useTheme,
-  Modal,
-  Box,
-} from "@mui/material";
-import SimpleMap from "./GoogleMap";
-import VideoPlayer from "./videoPlayer";
+import { Grid, useMediaQuery, useTheme } from "@mui/material";
+// import VideoPlayer from "./videoPlayer";
+import MapComponent from "./Leaflet";
 import withVantaBackground from "./WithVantaBackground";
 import { TypeAnimation } from "react-type-animation";
-import { useState } from "react";
-
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: "80%",
-  height: "70%",
-  maxWidth: 800,
-  maxHeight: 600,
-  minWidth: 300,
-  minHeight: 300,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
-  p: 4,
-};
 import Data from "./Data";
 
 function Dashboard() {
+  const initialSentences = [
+    "Welcome to the dashboard",
+    1000,
+    "Here you can see the live data",
+    1000,
+    "You can also see the live video feed",
+    1000,
+    "And the location of the vehicle",
+    1000,
+    "Have a nice day",
+  ];
+
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
-
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
 
   return (
     <div
@@ -53,18 +37,7 @@ function Dashboard() {
     >
       <TypeAnimation
         cursor={true}
-        sequence={[
-          "Welcome to the dashboard",
-          1000,
-          "Here you can see the live data",
-          1000,
-          "You can also see the live video feed",
-          1000,
-          "And the location of the vehicle",
-          1000,
-          "Have a nice day",
-          1000,
-        ]}
+        sequence={initialSentences}
         wrapper="h1"
         repeat
         repeatDelay={1000}
@@ -90,35 +63,23 @@ function Dashboard() {
           boxSizing: "border-box",
         }}
       >
-        <Grid item xs={isSmallScreen ? 12 : 6} onClick={handleOpen}>
-          <SimpleMap />
+        <Grid item xs={isSmallScreen ? 12 : 6}>
+          {/* <SimpleMap /> */}
+          <MapComponent />
         </Grid>
-        <Grid item xs={isSmallScreen ? 12 : 6} onClick={handleOpen}>
-          <SimpleMap />
+        <Grid item xs={isSmallScreen ? 12 : 6}>
+          <Data />
+          {/* <VideoPlayer /> */}
         </Grid>
-        <Grid item xs={isSmallScreen ? 12 : 6} onClick={handleOpen}>
-          <SimpleMap />
+        <Grid item xs={isSmallScreen ? 12 : 6}>
+          <Data />
+          {/* <SimpleMap /> */}
         </Grid>
-        <Grid item xs={isSmallScreen ? 12 : 6} onClick={handleOpen}>
-          <SimpleMap />
+        <Grid item xs={isSmallScreen ? 12 : 6}>
+          <Data />
+          {/* <MapComponent /> */}
         </Grid>
       </Grid>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          {/* <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography> */}
-        <SimpleMap /> 
-        </Box>
-      </Modal>
     </div>
   );
 }
