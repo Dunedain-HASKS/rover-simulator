@@ -27,6 +27,7 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
+import Data from "./Data";
 
 function Dashboard() {
   const theme = useTheme();
