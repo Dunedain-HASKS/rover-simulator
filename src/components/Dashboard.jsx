@@ -45,7 +45,7 @@ function Dashboard() {
           color: "white",
           textAlign: "center",
           fontSize: "50px",
-          fontFamily: "Roboto",
+          fontFamily: "Orbitron",
           fontWeight: "bold",
           margin: "50px",
           minHeight: "80px",

@@ -15,7 +15,7 @@ function App() {
       // You can customize other palette properties like error, warning, info, etc.
     },
     typography: {
-      fontFamily: "Arial, sans-serif", // Change default font family
+      fontFamily: "Orbitron, sans-serif", // Change default font family
     },
     // Other customizations like spacing, breakpoints, overrides, etc. can be added here
   });
@@ -28,6 +28,7 @@ function App() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        fontFamily: "Tektur, sans-serif",
       }}
     >
       <ThemeProvider theme={theme}>

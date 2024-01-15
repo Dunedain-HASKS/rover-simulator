@@ -27,16 +27,16 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
+function createData(name, value) {
+  return { name, value };
 }
 
 const rows = [
-  createData('Row', 159, 6.0, 24, 4.0),
-  createData('Pitch', 237, 9.0, 37, 4.3),
-  createData('X', 262, 16.0, 24, 6.0),
-  createData('Longitude', 305, 3.7, 67, 4.3),
-  createData('Latitude', 356, 16.0, 49, 3.9),
+  createData('Row', 159),
+  createData('Pitch', 237),
+  createData('X', 262),
+  createData('Longitude', 305),
+  createData('Latitude', 356),
 ];
 
 export default function Data() {
@@ -46,8 +46,9 @@ export default function Data() {
         <TableHead sx={{ width: "100%" }}>
           <TableRow sx={{ width: "100%" }}>
             <StyledTableCell sx={{ width: "100%" }}>
-              Dessert (100g serving)
+              Live Data
             </StyledTableCell>
+            <StyledTableCell align="right"></StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -56,10 +57,7 @@ export default function Data() {
               <StyledTableCell component="th" scope="row">
                 {row.name}
               </StyledTableCell>
-              <StyledTableCell align="right">{row.calories}</StyledTableCell>
-              <StyledTableCell align="right">{row.fat}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="right">{row.protein}</StyledTableCell>
+              <StyledTableCell align="right">{row.value}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>

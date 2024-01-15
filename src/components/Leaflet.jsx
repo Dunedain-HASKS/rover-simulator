@@ -16,12 +16,12 @@ const MapComponent = () => {
         { coords: { lat: 23.188642, lng: 72.628731 } },
       ];
 
-      const map = L.map("mapDiv").setView([lat, lon], 17);
+      const map = L.map("mapDiv").setView([lat, lon], 18);
 
       L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution:
           'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-        maxZoom: 18,
+        maxZoom: 19,
       }).addTo(map);
 
       for (let i = 0; i < locations.length; i++) {
