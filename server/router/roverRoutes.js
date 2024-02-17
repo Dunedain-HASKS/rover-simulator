@@ -1,10 +1,10 @@
 // roverRoutes.js
-const express = require('express');
-const router = express.Router();
+import { Router } from "express";
+const router = Router();
 
 // Define your routes here
-router.get('/', (req, res) => {
-    // Your route logic here
+router.get("/", (req, res) => {
+  // Your route logic here
 });
 
-module.exports = router;
+export default router;
