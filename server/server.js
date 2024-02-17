@@ -1,24 +1,27 @@
-const express = require('express');
+import express, { json } from "express";
 const app = express();
 const port = process.env.PORT || 8000;
 
-const dotenv = require('dotenv');
-dotenv.config();
+import { config } from "dotenv";
+config();
 
-const cors = require('cors');
+import cors from "cors";
 app.use(cors());
 
-const connectDB = require('./config/db');
+import connectDB from "./config/db.js";
 connectDB();
 
-app.use(express.json());
-app.use('/api/rover', require('./router/roverRoutes'));
+import subscriber from "./config/mqtt.js";
+subscriber();
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
+app.use(json());
+import roverRoutes from "./router/roverRoutes.js";
+app.use("/api/rover", roverRoutes);
+
+app.get("/", (req, res) => {
+  res.send("Hello World!");
 });
 
 app.listen(port, () => {
-    console.log(`server listening at http://localhost:${port}`);
-}
-);
+  console.log(`server listening at http://localhost:${port}`);
+});

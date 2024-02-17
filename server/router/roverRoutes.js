@@ -1,11 +1,11 @@
 // roverRoutes.js
-import express from 'express';
+import { Router } from "express";
+const router = Router();
 import roverController from '../controller/roverController';
-const router = express.Router();
 
 // Define your routes here
 router.get('/', (req, res) => {
-    res.send('Hello from rover routes');
+    // Your route logic here
 });
 
 router.post('/create', roverController.createRover);

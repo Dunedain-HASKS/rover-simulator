@@ -1,5 +1,7 @@
 import { connect } from 'mongoose';
 
+console.log(process.env.MONGO_URI);
+
 const connectDB = async () => {
     try {
         const conn = await connect(process.env.MONGO_URI);
@@ -11,3 +13,5 @@ const connectDB = async () => {
 };
 
 export default connectDB;
+
+module.exports = connectDB;
