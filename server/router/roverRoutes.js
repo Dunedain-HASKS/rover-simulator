@@ -1,7 +1,7 @@
 // roverRoutes.js
 import { Router } from "express";
 const router = Router();
-import roverController from '../controller/roverController';
+import roverController from '../controller/roverController.js';
 
 // Define your routes here
 router.get('/', (req, res) => {
@@ -13,4 +13,4 @@ router.get('/get', roverController.getRover);
 router.get('/get/:id', roverController.getRoverById);
 router.get('/get/:start/:end', roverController.getRoverByTimeDuration);
 
-module.exports = router;
+export default router;

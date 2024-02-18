@@ -36,4 +36,4 @@ const getRoverByTimeDuration = async (req, res) => {
     }
 }
 
-module.exports = { createRover, getRover, getRoverById, getRoverByTimeDuration };
+export default { createRover, getRover, getRoverById, getRoverByTimeDuration };

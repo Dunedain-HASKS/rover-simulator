@@ -11,6 +11,9 @@ app.use(cors());
 import connectDB from "./config/db.js";
 connectDB();
 
+import publisher from "./config/publisher.js";
+// publisher();
+
 import subscriber from "./config/mqtt.js";
 subscriber();
 

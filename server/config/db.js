@@ -1,6 +1,6 @@
 import { connect } from 'mongoose';
 
-console.log(process.env.MONGO_URI);
+// console.log(`${process.env.MONGO_URI}`);
 
 const connectDB = async () => {
     try {
@@ -13,5 +13,3 @@ const connectDB = async () => {
 };
 
 export default connectDB;
-
-module.exports = connectDB;
