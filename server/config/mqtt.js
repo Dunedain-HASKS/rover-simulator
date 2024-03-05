@@ -14,7 +14,6 @@ const subscriber = async () => {
 
     let dataValues = message.toString().split(',');
 
-    // Use the values as needed, e.g., convert them to numbers
     let data = {
       value1: parseFloat(dataValues[0]),
       value2: parseFloat(dataValues[1])
