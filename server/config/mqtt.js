@@ -12,9 +12,16 @@ const subscriber = async () => {
   client.on("message", async (topic, message) => {
     console.log(`Received message from ${topic}: ${message}`);
 
-    let data = JSON.parse(message);
+    let dataValues = message.toString().split(',');
+
+    // Use the values as needed, e.g., convert them to numbers
+    let data = {
+      value1: parseFloat(dataValues[0]),
+      value2: parseFloat(dataValues[1])
+    };
+
     console.log(data);
-    await createRover(data);
+    // await createRover(data);
   });
 };
 
