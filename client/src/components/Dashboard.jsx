@@ -4,6 +4,7 @@ import MapComponent from "./Leaflet";
 import withVantaBackground from "./WithVantaBackground";
 import { TypeAnimation } from "react-type-animation";
 import Data from "./Data";
+import VideoStream from "./videost";
 
 function Dashboard() {
   const initialSentences = [
@@ -68,8 +69,7 @@ function Dashboard() {
           <MapComponent />
         </Grid>
         <Grid item xs={isSmallScreen ? 12 : 6}>
-          <Data />
-          {/* <VideoPlayer /> */}
+          <img src="http://192.168.4.1:81/" height="500px"></img>
         </Grid>
         <Grid item xs={isSmallScreen ? 12 : 6}>
           <Data />
