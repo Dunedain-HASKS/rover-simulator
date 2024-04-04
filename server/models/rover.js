@@ -17,4 +17,4 @@ const roverSchema = new mongoose.Schema({
 
 const Rover = mongoose.model('Rover', roverSchema);
 
-module.exports = Rover;
+export default Rover;

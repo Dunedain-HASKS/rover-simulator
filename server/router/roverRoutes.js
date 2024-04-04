@@ -12,5 +12,7 @@ router.post('/create', roverController.createRover);
 router.get('/get', roverController.getRover);
 router.get('/get/:id', roverController.getRoverById);
 router.get('/get/:start/:end', roverController.getRoverByTimeDuration);
+router.get('/latest', roverController.getRoverLatest);
+router.get('/latest3', roverController.getRoverLatestThree);
 
 export default router;
