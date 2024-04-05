@@ -48,12 +48,20 @@ export default function Data() {
 const [roverData, setRoverData] = useState();
 
 useEffect(() => {
+  const fetchData = () => {
   fetch("http://localhost:8000/api/rover/latest")
     .then((res) => res.json())
     .then((data) => {
-      console.log(data)
+      console.log("Data recieved for table after 3 seconds", data);
       setRoverData(data);})
     .catch((error) => console.log("Error: ", error));
+  };
+  fetchData();
+
+
+  const interval = setInterval(fetchData, 3000);
+
+  return () => clearInterval(interval);
 }, []);
 
   return (

@@ -5,6 +5,7 @@ import "leaflet/dist/leaflet.css";
 const MapComponent = () => {
   const [locations, setLocations] = useState([]);
   useEffect(() => {
+    const fetchData = () => {
     fetch("http://localhost:8000/api/rover/latest3")
     .then((res) => {
       if (!res.ok) {
@@ -13,11 +14,11 @@ const MapComponent = () => {
       return res.json();
     })
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         const mapDiv = document.getElementById("mapDiv");
       const lat =  data[0] ? data[0].latitude : 23.188212;
       const lon = data[0] ? data[0].longitude : 72.628232;
-      console.log(data, "ok");
+      console.log("Data recieved for map after 5 seconds", data);
 
       if (mapDiv && !mapDiv._leaflet_id) {
         const map = L.map("mapDiv").setView([lat, lon], 18);
@@ -36,6 +37,14 @@ const MapComponent = () => {
         // console.log(locations);
       })
       .catch((error) => console.log("Error: ", error));
+    };
+    fetchData();
+
+    // Fetch data every 5 seconds
+    const interval = setInterval(fetchData, 5000);
+
+    // Clean up interval to avoid memory leaks
+    return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
