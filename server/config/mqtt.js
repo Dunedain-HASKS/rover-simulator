@@ -6,7 +6,11 @@ const { createRover, getRoverLatestmqtt } = roverController;
 
 const subscriber = async () => {
   let client = mqtt.connect("mqtt://broker.hivemq.com");
-
+  if (!client) {
+    console.log("MQTT broker not connected");
+    return;
+  }
+  
   client.on("connect", () => {
     client.subscribe("daiict/robotics/iot");
     console.log("Connected to MQTT broker");
