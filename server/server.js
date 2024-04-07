@@ -1,7 +1,7 @@
 import express, { json } from "express";
 const app = express();
 const port = process.env.PORT || 8000;
-
+import fileRouter from "./router/streamRoutes.js";
 import { config } from "dotenv";
 config();
 
@@ -20,6 +20,7 @@ subscriber();
 app.use(json());
 import roverRoutes from "./router/roverRoutes.js";
 app.use("/api/rover", roverRoutes);
+app.use("/api/file", fileRouter);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
