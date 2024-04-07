@@ -8,15 +8,19 @@ import VideoStream from "./videost";
 
 function Dashboard() {
   const initialSentences = [
-    "Welcome to the dashboard",
+    // "Welcome to the dashboard",
+    // 1000,
+    // "Here you can see the live data",
+    // 1000,
+    // "You can also see the live video feed",
+    // 1000,
+    // "And the location of the vehicle",
+    // 1000,
+    // "Have a nice day",
     1000,
-    "Here you can see the live data",
-    1000,
-    "You can also see the live video feed",
-    1000,
-    "And the location of the vehicle",
-    1000,
-    "Have a nice day",
+    "Live Camera View from prototype",
+    // 1000,
+    // "GPS Position Feed",
   ];
 
   const theme = useTheme();
@@ -69,7 +73,8 @@ function Dashboard() {
           <MapComponent />
         </Grid>
         <Grid item xs={isSmallScreen ? 12 : 6}>
-          <img src="http://192.168.4.1:81/" height="500px"></img>
+          {/* <h1>hiii</h1> */}
+          <img src="http://192.168.26.248:81/stream" height="500px" width="1000px"></img>
         </Grid>
         <Grid item xs={isSmallScreen ? 12 : 6}>
           <Data />
@@ -80,7 +85,7 @@ function Dashboard() {
           {/* <MapComponent /> */}
         </Grid>
       </Grid>
-    </div>
+    </div >
   );
 }
 
