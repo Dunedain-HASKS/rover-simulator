@@ -74,7 +74,16 @@ function Dashboard() {
         </Grid>
         <Grid item xs={isSmallScreen ? 12 : 6}>
           {/* <h1>hiii</h1> */}
-          <img src="http://192.168.26.248:81/stream" height="500px" width="1000px"></img>
+          <img
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              // alignItems: "center",
+            }}
+            src="https://0865-2409-4080-818e-1b2d-2d0e-64bb-ea22-a083.ngrok-free.app/stream"
+            height="60%"
+            width="85%"
+          ></img>
         </Grid>
         <Grid item xs={isSmallScreen ? 12 : 6}>
           <Data />
@@ -85,7 +94,7 @@ function Dashboard() {
           {/* <MapComponent /> */}
         </Grid>
       </Grid>
-    </div >
+    </div>
   );
 }
 
