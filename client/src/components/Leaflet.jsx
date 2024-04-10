@@ -16,12 +16,12 @@ const MapComponent = () => {
         .then((data) => {
           // console.log(data);
           const mapDiv = document.getElementById("mapDiv");
-          const lat = data[0] ? data[0].latitude : 23.188212;
-          const lon = data[0] ? data[0].longitude : 72.628232;
-          console.log("Data recieved for map after 5 seconds", data);
+          const lat = data[data.length - 1] ? data[data.length - 1].latitude : 23.188212;
+          const lon = data[data.length - 1] ? data[data.length - 1].longitude : 72.628232;
+          // console.log("Data recieved for map after 5 seconds", data);
 
           if (mapDiv && !mapDiv._leaflet_id) {
-            const map = L.map("mapDiv").setView([lat, lon], 18);
+            const map = L.map("mapDiv").setView([lat, lon], 13);
 
             L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
               attribution:
@@ -38,7 +38,7 @@ const MapComponent = () => {
             ).addTo(map);
           }
           setLocations(data);
-          // console.log(locations);
+          // console.log("location:", locations);
         })
         .catch((error) => console.log("Error: ", error));
     };
@@ -49,25 +49,12 @@ const MapComponent = () => {
 
     // Clean up interval to avoid memory leaks
     return () => clearInterval(interval);
-  }, []);
+  }, [locations]);
 
-  useEffect(() => {
-    // const mapDiv = document.getElementById("mapDiv");
-    // const lat =  locations[0] ? locations[0].latitude : 23.188212;
-    // const lon = locations[0] ? locations[0].longitude : 72.628232;
-    // console.log(locations, "ok");
-    // if (mapDiv && !mapDiv._leaflet_id) {
-    //   const map = L.map("mapDiv").setView([lat, lon], 18);
-    //   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    //     attribution:
-    //       'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-    //     maxZoom: 19,
-    //   }).addTo(map);
-    //   for (let i = 0; i < locations.length; i++) {
-    //     L.marker([locations[i].latitude, locations[i].longitude]).addTo(map);
-    //   }
-    // }
-  }, []);
+
+  // useEffect(() => {
+  //   // console.log("location:", locations);
+  // }, [locations]);
 
   return <div id="mapDiv" style={{ width: "100%", height: "48vh" }}></div>;
 };
