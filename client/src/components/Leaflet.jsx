@@ -56,7 +56,7 @@ const MapComponent = () => {
   //   // console.log("location:", locations);
   // }, [locations]);
 
-  return <div id="mapDiv" style={{ width: "100%", height: "48vh" }}></div>;
+  return <div id="mapDiv" style={{ width: "100%", height: "48vh", borderRadius:'px' }}></div>;
 };
 
 export default MapComponent;

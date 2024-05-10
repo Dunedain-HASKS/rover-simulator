@@ -18,7 +18,7 @@ const withVantaBackground = (WrappedComponent) => {
         minWidth: 200.0,
         scale: 1.0,
         scaleMobile: 1.0,
-        backgroundColor: 0x1f1f1f,
+        backgroundColor: 0x1f1f1c,
         color: 0x00ff00, // Set color to green (0x00ff00 represents pure green)
         // Other Vanta.js configuration options...
       });

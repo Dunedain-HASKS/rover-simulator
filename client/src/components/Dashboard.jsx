@@ -1,10 +1,10 @@
 import { Grid, useMediaQuery, useTheme } from "@mui/material";
-// import VideoPlayer from "./videoPlayer";
 import MapComponent from "./Leaflet";
 import withVantaBackground from "./WithVantaBackground";
 import { TypeAnimation } from "react-type-animation";
 import Data from "./Data";
-import VideoStream from "./videost";
+import SimpleLineChart from "./Graph";
+import "./scroll.css";
 
 function Dashboard() {
   const initialSentences = [
@@ -28,6 +28,7 @@ function Dashboard() {
 
   return (
     <div
+    className="custom-scroll-container"
       style={{
         width: "100%",
         height: "100%",
@@ -85,12 +86,12 @@ function Dashboard() {
             width="85%"
           ></img>
         </Grid>
-        <Grid item xs={isSmallScreen ? 12 : 6}>
+        <Grid item xs={isSmallScreen ? 12 : 6} sx={{ pb: 5 }}>
           <Data />
           {/* <SimpleMap /> */}
         </Grid>
-        <Grid item xs={isSmallScreen ? 12 : 6}>
-          <Data />
+        <Grid item xs={isSmallScreen ? 12 : 6} sx={{ pb: 5 }}>
+          <SimpleLineChart />
           {/* <MapComponent /> */}
         </Grid>
       </Grid>
