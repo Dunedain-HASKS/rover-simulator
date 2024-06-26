@@ -9,18 +9,18 @@ import "./scroll.css";
 function Dashboard() {
   const initialSentences = [
     "Welcome to the dashboard",
-    1000,
-    "Here you can see the live data",
-    1000,
-    "You can also see the live video feed",
-    1000,
-    "And the location of the vehicle",
-    1000,
-    "Have a nice day",
-    1000,
-    "Live Camera View from prototype",
-    1000,
-    "GPS Position Feed",
+    // 1000,
+    // "Here you can see the live data",
+    // 1000,
+    // "You can also see the live video feed",
+    // 1000,
+    // "And the location of the vehicle",
+    // 1000,
+    // "Have a nice day",
+    // 1000,
+    // "Live Camera View from prototype",
+    // 1000,
+    // "GPS Position Feed",
   ];
 
   const theme = useTheme();
@@ -28,7 +28,7 @@ function Dashboard() {
 
   return (
     <div
-    className="custom-scroll-container"
+      className="custom-scroll-container"
       style={{
         width: "100%",
         height: "100%",
@@ -75,7 +75,7 @@ function Dashboard() {
         </Grid>
         <Grid item xs={isSmallScreen ? 12 : 6}>
           {/* <h1>hiii</h1> */}
-          <img src="https://b76c-2409-4080-8303-f32c-35e7-bbea-7060-804b.ngrok-free.app/stream" height="500px" width="1000px"></img>
+          <img src="https://b76c-2409-4080-8303-f32c-35e7-bbea-7060-804b.ngrok-free.app/stream" height="390px" width="650px"></img>
         </Grid>
         <Grid item xs={isSmallScreen ? 12 : 6} sx={{ pb: 5 }}>
           <Data />
