@@ -63,7 +63,7 @@ const getRoverLatestmqtt = async () => {
 
 const getRoverLatestThree = async (req, res) => {
     try {
-        const rover = await Rover.find().sort({ timestamp: -1 }).limit(3);
+        const rover = await Rover.find().sort({ timestamp: -1 }).limit(10);
         res.status(200).json(rover);
     } catch (error) {
         res.status(500).json({ error: error });

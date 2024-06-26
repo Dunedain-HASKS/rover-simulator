@@ -31,18 +31,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-function createData(name, value) {
-  return { name, value };
-}
-
-const rows = [
-  createData('Row', 159),
-  createData('Pitch', 237),
-  createData('X', 262),
-  createData('Longitude', 305),
-  createData('Latitude', 356),
-];
-
 export default function Data() {
 
 const [roverData, setRoverData] = useState();
@@ -52,7 +40,7 @@ useEffect(() => {
   fetch("http://localhost:8000/api/rover/latest")
     .then((res) => res.json())
     .then((data) => {
-      console.log("Data recieved for table after 3 seconds", data);
+      // console.log("Data recieved for table after 3 seconds", data);
       setRoverData(data);})
     .catch((error) => console.log("Error: ", error));
   };
