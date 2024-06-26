@@ -49,7 +49,7 @@ const MapComponent = () => {
 
     // Clean up interval to avoid memory leaks
     return () => clearInterval(interval);
-  }, [locations]);
+  }, []);
 
 
   // useEffect(() => {

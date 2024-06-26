@@ -8,19 +8,19 @@ import "./scroll.css";
 
 function Dashboard() {
   const initialSentences = [
-    // "Welcome to the dashboard",
-    // 1000,
-    // "Here you can see the live data",
-    // 1000,
-    // "You can also see the live video feed",
-    // 1000,
-    // "And the location of the vehicle",
-    // 1000,
-    // "Have a nice day",
+    "Welcome to the dashboard",
+    1000,
+    "Here you can see the live data",
+    1000,
+    "You can also see the live video feed",
+    1000,
+    "And the location of the vehicle",
+    1000,
+    "Have a nice day",
     1000,
     "Live Camera View from prototype",
-    // 1000,
-    // "GPS Position Feed",
+    1000,
+    "GPS Position Feed",
   ];
 
   const theme = useTheme();
