@@ -74,7 +74,7 @@ function Dashboard() {
         </Grid>
         <Grid item xs={isSmallScreen ? 12 : 6}>
           {/* <h1>hiii</h1> */}
-          <img src="http://192.168.26.248:81/stream" height="500px" width="1000px"></img>
+          <img src="https://b76c-2409-4080-8303-f32c-35e7-bbea-7060-804b.ngrok-free.app/stream" height="500px" width="1000px"></img>
         </Grid>
         <Grid item xs={isSmallScreen ? 12 : 6}>
           <Data />
