@@ -34,6 +34,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 export default function Data() {
 
 const [roverData, setRoverData] = useState();
+const [accData, setAccData] = useState();
 
 useEffect(() => {
   const fetchData = () => {
@@ -49,6 +50,23 @@ useEffect(() => {
 
   const interval = setInterval(fetchData, 3000);
 
+  return () => clearInterval(interval);
+}, []);
+
+useEffect(() => {
+  const fetchData = () => {
+  fetch("http://localhost:8000/api/accData/latest")
+    .then((res) => res.json())
+    .then((data) => {
+      // console.log("Data recieved for table after 3 seconds", data);
+      setAccData(data);})
+    .catch((error) => console.log("Error: ", error));
+  };
+  fetchData();
+
+
+  const interval = setInterval(fetchData, 3000);
+  
   return () => clearInterval(interval);
 }, []);
 
@@ -77,6 +95,28 @@ useEffect(() => {
                   Longitude
                 </StyledTableCell>
                 <StyledTableCell align="right" sx={{width:"100%"}}>{row.longitude}</StyledTableCell>
+              </StyledTableRow>
+            </div>
+          ))}
+          {accData && accData.map((row) => (
+            <div key={row.name} style={{width:"100%"}}>
+              <StyledTableRow sx={{width:"100%" , display: "flex"}}>
+                <StyledTableCell component="th" scope="row" sx={{width:"100%"}}>
+                  acceleration in X
+                </StyledTableCell>
+                <StyledTableCell align="right" sx={{width:"100%"}}>{row.x}</StyledTableCell>
+              </StyledTableRow>
+              <StyledTableRow sx={{width:"100%"}}>
+                <StyledTableCell component="th" scope="row" sx={{width:"100%"}}>
+                acceleration in Y
+                </StyledTableCell>
+                <StyledTableCell align="right" sx={{width:"100%"}}>{row.y}</StyledTableCell>
+              </StyledTableRow>
+              <StyledTableRow sx={{width:"100%"}}>
+                <StyledTableCell component="th" scope="row" sx={{width:"100%"}}>
+                acceleration in Z
+                </StyledTableCell>
+                <StyledTableCell align="right" sx={{width:"100%"}}>{row.z}</StyledTableCell>
               </StyledTableRow>
             </div>
           ))}
