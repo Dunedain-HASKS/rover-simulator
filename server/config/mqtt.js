@@ -10,7 +10,7 @@ const subscriber = async () => {
     console.log("MQTT broker not connected");
     return;
   }
-  
+
   client.on("connect", () => {
     client.subscribe("daiict/robotics/iot");
     console.log("Connected to MQTT broker");
@@ -25,10 +25,11 @@ const subscriber = async () => {
       latitude: parseFloat(dataValues[0]),
       longitude: parseFloat(dataValues[1])
     };
-
+    data.latitude = data.latitude + 0.0785;
+    data.longitude = data.longitude + 0.2489;
     console.log(data);
     const latest = await getRoverLatestmqtt();
-    if(latest && (latest[0].latitude === data.latitude && latest[0].longitude === data.longitude)){
+    if (latest && (latest[0].latitude === data.latitude && latest[0].longitude === data.longitude)) {
       console.log("Data already exists");
       return;
     }

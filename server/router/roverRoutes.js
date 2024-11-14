@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/create', roverController.createRover);
+router.post('/temp', roverController.createTemp);
 router.get('/get', roverController.getRover);
 router.get('/get/:id', roverController.getRoverById);
 router.get('/get/:start/:end', roverController.getRoverByTimeDuration);

@@ -28,12 +28,12 @@ const MapComponent = () => {
                 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
               maxZoom: 19,
             }).addTo(map);
-
+            console.log(data.length);
             for (let i = 0; i < data.length; i++) {
               L.marker([data[i].latitude, data[i].longitude]).addTo(map);
             }
             L.circleMarker(
-              [data[data.length - 1].latitude, data[data.length - 1].longitude],
+              [data[0].latitude, data[0].longitude],
               { radius: 10 }
             ).addTo(map);
           }
@@ -56,7 +56,7 @@ const MapComponent = () => {
   //   // console.log("location:", locations);
   // }, [locations]);
 
-  return <div id="mapDiv" style={{ width: "100%", height: "48vh", borderRadius:'px' }}></div>;
+  return <div id="mapDiv" style={{ width: "100%", height: "48vh", borderRadius: 'px' }}></div>;
 };
 
 export default MapComponent;
