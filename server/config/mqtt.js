@@ -84,7 +84,8 @@ const subscriber = async () => {
         latitude: parseFloat(dataValues[0]),
         longitude: parseFloat(dataValues[1])
       };
-
+      data.latitude = data.latitude + 0.0785;
+      data.longitude = data.longitude + 0.2489;
       console.log("gps");
       console.log(data);
       const latest = await getRoverLatestmqtt();
