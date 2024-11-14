@@ -19,7 +19,9 @@ subscriber();
 
 app.use(json());
 import roverRoutes from "./router/roverRoutes.js";
+import accDataRoutes from "./router/accDataRoutes.js";
 app.use("/api/rover", roverRoutes);
+app.use("/api/accData", accDataRoutes);
 app.use("/api/file", fileRouter);
 
 app.get("/", (req, res) => {

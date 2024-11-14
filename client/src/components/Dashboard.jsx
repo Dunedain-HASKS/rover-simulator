@@ -4,6 +4,7 @@ import withVantaBackground from "./WithVantaBackground";
 import { TypeAnimation } from "react-type-animation";
 import Data from "./Data";
 import SimpleLineChart from "./Graph";
+import AccSimpleLineChart from "./AccGraph";
 import "./scroll.css";
 
 function Dashboard() {
@@ -75,15 +76,22 @@ function Dashboard() {
         </Grid>
         <Grid item xs={isSmallScreen ? 12 : 6}>
           {/* <h1>hiii</h1> */}
-          <img src="https://b76c-2409-4080-8303-f32c-35e7-bbea-7060-804b.ngrok-free.app/stream" height="390px" width="650px"></img>
+          <img
+            src="https://b76c-2409-4080-8303-f32c-35e7-bbea-7060-804b.ngrok-free.app/stream"
+            height="390px"
+            width="650px"
+          ></img>
         </Grid>
-        <Grid item xs={isSmallScreen ? 12 : 6} sx={{ pb: 5 }}>
-          <Data />
-          {/* <SimpleMap /> */}
+        <Grid item xs={isSmallScreen ? 12 : 6}>
+          <AccSimpleLineChart />
         </Grid>
         <Grid item xs={isSmallScreen ? 12 : 6} sx={{ pb: 5 }}>
           <SimpleLineChart />
           {/* <MapComponent /> */}
+        </Grid>
+        <Grid item xs={isSmallScreen ? 12 : 6} sx={{ pb: 5 }}>
+          <Data />
+          {/* <SimpleMap /> */}
         </Grid>
       </Grid>
     </div>
